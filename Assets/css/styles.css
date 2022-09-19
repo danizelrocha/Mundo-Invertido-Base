@@ -22,10 +22,10 @@
     --header-background-color: #e3e3e3;
     --highlight-color: #000000;
     --featured-font-family: "Archivo", sans-serif;
-    --character-top-image-src: url("../image/characters/kids-on-the-bike.png");
+    --character-top-image-src: url("../image/characters/kids.png");
     --character-top-image-color: #ffffff;
-    --character-top-image-src: url("../image/characters/inverted-world-monster.png");
-    --character-top-image-color: #e5e5e5;
+    --character-bottom-image-src: url("../image/characters/inverted-world-monster.png");
+    --character-bottom-image-color: #e5e5e5;
     --background-lamp-color: url("../image/backgrounds/lamps.png");
     --footer-background-color:  #b5bbbf;
 }
@@ -42,7 +42,7 @@
     --feature-font-family: "Rubik Glitch", sans-serif;
     --character-bottom-image-src: url("../image/characters/kids-on-the-bike.png");
     --character-bottom-image-color: rgba(255, 255, 255, 0.1);
-    --character-top-image-src: url("../image/charecters/inverted-world-monster.png");
+    --character-top-image-src: url("../image/characters/inverted-world-monster.png");
     --character-top-image-color: #000;
     --background-lamp-image: url("../image/backgrounds/lamps-inverted.png");
     --footer-background-color: #000;
@@ -96,6 +96,7 @@ header{
     flex-direction: column;
     align-items: center;
     position: relative;
+    bottom: -3px;
 }
 
 header::before{
@@ -139,3 +140,93 @@ header::before{
     border-radius: 8px;
 }
 
+/****    WORLD CHARACTERS STYLES      ****/
+
+.world-characters{
+    width: 100%;
+    max-width: 900px;
+    position: absolute;
+}
+
+.world-characters#top-characters{
+    height: 100%;
+    background-color: var(--character-top-image-color);
+    bottom: -4px;
+
+    mask: var(--character-top-image-src) bottom / 100% no-repeat;
+    -webkit-mask: var(--character-top-image-src) bottom / 100% no-repeat;
+}
+ 
+.world-characters#bottom-charracters{
+    height: 500px;
+    background-color: var(--character-bottom-image-color);
+    top: 3px;
+    transform: rotateZ(180deg) scaleX(-1);
+    position: relative;
+
+    mask: var(--character-bottom-image-src) bottom / contain no-repeat;
+    -webkit-mask: var(--character-bottom-image-src) bottom / 100% no-repeat;
+}
+
+/****    MAIN      ****/
+
+main{
+    position: relative;
+    display:flex;
+    flex-direction: column;
+    text-align:center;
+}
+
+/****    section      ****/
+
+section{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 95px;
+}
+
+/****    SECTION 01  INVERTED WORLD      ****/
+
+.container{
+    max-width: 1200px;
+}
+
+#section-inverted-world{
+    align-items: center;
+}
+
+#section-inverted-world .section-texts{
+    width: 50%;
+}
+
+#section-inverted-world .section-texts h2{
+    max-width: 300px;
+}
+
+/****    SECTION 02  STRANGER TINGS TRAILER     ****/
+
+#section-stranger-things-trailer .section-texts{
+    width: 50%;
+    text-align: right;
+}
+
+#section-stranger-things-trailer .section-texts h2{
+    max-width: 425px;
+    display: inline-block;
+}
+
+#section-stranger-things-trailer .video-frame{
+    background-color: var(--primary-color);
+}
+
+#section-stranger-things-trailer .video-frame iframe{
+    position: relative;
+    bottom: 24px;
+    left: 24px;
+    border: 2px solid;
+    border-image: linear-gradient(
+        var(--primary-color),
+        var(--primary-color-constrast)
+    );
+    border-image-slice: 10;
+}
