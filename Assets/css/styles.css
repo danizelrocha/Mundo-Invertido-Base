@@ -44,7 +44,7 @@
     --character-bottom-image-color: rgba(255, 255, 255, 0.1);
     --character-top-image-src: url("../image/characters/inverted-world-monster.png");
     --character-top-image-color: #000;
-    --background-lamp-image: url("../image/backgrounds/lamps-inverted.png");
+    --background-lamp-image: url("../image/backgrounds/lamps-invered.png");
     --footer-background-color: #000;
 }
 
@@ -149,7 +149,7 @@ header::before{
     position: absolute;
 }
 
-.world-characters#top-characters{
+#top-characters{
     height: 100%;
     background-color: var(--character-top-image-color);
     bottom: -4px;
@@ -267,4 +267,5 @@ section{
     height: 100%;
     object-fit: cover;
     border: 10px solid var(--highlight-color);
+    outline: 20px solid var(--highlight-color);
 }
